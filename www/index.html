@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="mobileoptimized" content=0 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <title>Game of Thrones</title>
+</head>
+<body>
+    <header>
+        <img src="img/logo.jpg" alt="Logo" title="Maison Stark" /> 
+
+        <section id="Menu">
+            <ul>
+                <li><a href="#Menu">Accueil</a></li>
+                <li><a href="#Maisons">Maisons</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><input type="search" name="search bar" id="SearchBar"></li>
+            </ul>
+        </section>
+    </header>
+
+
+
+
+
+
+
+    <hr />
+
+    <div id="Headband">
+        <img src="img/House.jpg" alt="Bandeau" title="Emblèmes des maisons">
+    </div>
+
+    <hr />
+
+
+
+
+
+    <section id="Maisons">
+        <h1>Présentation des maisons</h1>
+        <p>
+            Vous trouverez ici les 4 principales maisons de la série. <br />
+            En plus les poney c'est trop la vie t'as vu sisi la famille wesh j'aime les chaises en bois du turfu. C'est parce qu'il faut remplir avec du texte alors voilà quoi.. Sinon ça va toi ? <br />
+            PAYS DE GALLES INDEPENDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANT !!!! 
+        </p>
+    </section>
+
+
+    <br />
+
+
+
+
+    <section id="Content">
+        <div class="article">
+            <img src="img/Stark.jpg">
+            <h3>Maison Stark</h3>
+            <p>La Maison Stark est l'une des grandes maisons de Westeros. Ils règnent sur la vaste région du Nord depuis leur siège, Winterfell, un château situé au centre de la région.</p>
+        </div>
+
+        <div class="article">
+            <img src="img/Lannister.jpg">
+            <h3>Maison Lannister</h3>
+            <p>La Maison Lannister est l'une des grandes maisons de Westeros et également l'actuelle maison royale des Sept Couronnes. Ils règnent sur la vaste région des Terres de l'Ouest depuis leur siège, Castral Roc, un château surplombant Port-Lannis.</p>
+        </div>
+
+        <div class="article">
+            <img src="img/Targaryen.jpg">
+            <h3>Maison Targaryen</h3>
+            <p>La Maison Targaryen est une ancienne grande maison de Westeros. Ils ont vécu pendant des siècles sur l'île de Peyredragon jusqu'à se qu'Aegon le Conquérant et ses sœurs, chevauchant leurs dragons, réussissent à conquérir les Sept Couronnes.</p>
+        </div>
+
+        <div class="article">
+            <img src="img/Martell.jpg">
+            <h3>Maison Martell</h3>
+            <p>La Maison Martell était une grande maison de Westeros. Ils régnaient sur la vaste région de Dorne depuis leur siège, Lancehélion, un château situé dans l'extrême sud-est du continent.</p>
+        </div>
+    </section>
+
+
+
+    <br />
+    <br />
+    <hr />
+
+
+
+
+    <div id="Contact">
+        <div class="google">
+            <h2>Localisation</h2>
+            <div id="infoposition"></div> <br />
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.5497678293846!2d1.8807213154150848!3d50.95053897954749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dc4086a1904405%3A0x7e0ccba33a6e4940!2sIUT+du+Littoral+C%C3%B4te+d&#39;Opale!5e0!3m2!1sfr!2sfr!4v1490362018160" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <div class="formulaire">
+            <h2>Contact</h2>
+            <form method="post" action="#">
+                <p id="1">
+                    <input type="text" name="firstname" id="firstname" placeholder="Prénom" />
+                    <input type="text" name="name" id="name" placeholder="Nom" />
+                </p>
+
+                <p>
+                    <input type="date" name="date" id="date" placeholder="Date de naissance" />
+                    <input type="text" name="ville" id="ville" placeholder="Ville de naissance" />
+                </p>
+
+                <p>
+                    <input type="email" name="email" id="email" placeholder="Adresse email" />
+                </p>
+
+                <p>
+                    <input type="file" name="image" id="recimage" placeholder="Photo" accept="image/*" capture />
+                </p>
+
+                <p>
+                    <input type="text" name="Message" id="message" placeholder="Message" />
+                </p>
+                <p>
+                    <input type="button" name="Envoyer" id="envoyer" value="Envoyer" />
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+    <br />
+    <hr />
+
+    <footer>
+        <p>Bastien Fossé - TPA</p>
+    </footer>
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		console.log("gy");
+		// Wait for device API libraries to load
+		//
+		document.addEventListener("deviceready", onDeviceReady, false);
+		// device APIs are available
+		//
+		function onDeviceReady() {
+			console.log("ready");
+			function playBeep() {
+				console.log("beep");
+				navigator.notification.beep(3);
+				navigator.vibrate(2000);
+			}
+			
+			document.getElementById("vcd").addEventListener("click", playBeep, false);
+			var networkState = navigator.connection.type;
+
+			var states = {};
+			states[Connection.UNKNOWN]  = 'Unknown connection';
+			states[Connection.ETHERNET] = 'Ethernet connection';
+			states[Connection.WIFI]     = 'WiFi connection';
+			states[Connection.CELL_2G]  = 'Cell 2G connection';
+			states[Connection.CELL_3G]  = 'Cell 3G connection';
+			states[Connection.CELL_4G]  = 'Cell 4G connection';
+			states[Connection.CELL]     = 'Cell generic connection';
+			states[Connection.NONE]     = 'No network connection';
+
+			alert('Connection type: ' + states[networkState]);
+			console.log(states[networkState]);
+			var infomobile = ["Model tel : " + device.model +"\n" +  "Cordova : " + device.cordova +"\n"+ "Langue : " + device.language +"\n"+"Platform : "
+			+ device.platform +"\n"+ "UUID : " + device.uuid +"\n" + "Version : " + device.version +"\n"];
+				
+			alert('Informations sur votre Device' + infomobile);
+			console.log(infomobile);
+		}
+    </script>	
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>V pour Vendetta</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="icon" type="image/jpg" href="img/vlogo.jpg" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p><a href="#" id="vcd">Vibrate</a></p>
+    <div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="#"> Accueil </a></li>
+				<li><a href="#"> Titre 1 </a></li>
+				<li><a href="#"> Contact </a></li>
+				<li><input type="search" name="recherche" placeholder="Recherche..."></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="contenu">
+		<img id="banniere" src="img/Vban.jpg">
+		<h1> Titre 1 </h1>
+		<p> Erat autem diritatis eius hoc quoque indicium nec obscurum nec latens, quod ludicris cruentis delectabatur et in circo sex vel septem aliquotiens vetitis certaminibus pugilum vicissim se concidentium perfusorumque sanguine specie ut lucratus ingentia laetabatur. </p>
+		
+		<span>
+        <img src="img/Vimg.jpg">
+		<h1> Titre 1 </h1>
+		<p> Description 1 </p></span>
+		
+		<span><img src="img/Vimg.jpg">
+		<h2> Titre 2 </h2>
+		<p> Description 2 </p></span>
+		
+		<span><img src="img/Vimg.jpg">
+		<h3> Titre 3 </h3>
+		<p> Description 3 </p></span>
+		
+		<span><img src="img/Vimg.jpg">
+		<h4> Titre 4 </h4>
+		<p> Description 4 </p></span>
+	</div>
+	
+	<div id="ccarte">
+	<h2> Titre 2 </h2>
+<div id="infoposition"></div>
+<div id="map"></div>
+	</div>	
+	
+	<div id="formu" >
+		<h2> Titre 2 </h2>
+		<form action="..." method="post" enctype="multipart/form-data">
+			<input id="elem" type="text" name="prenom" placeholder="Prenom">
+			<input id="elem" type="text" name="nom" placeholder="Nom"></br>
+			<input id="elem" type="date" name="date" placeholder="Date de naissance">
+			<input id="elem" type="text" name="ville" placeholder="Ville de naissance"></br>
+			<input id="elem1" type="email" name="mail" placeholder="Adresse mail"></br>
+			<input id="elem1" type="file" name="image" accept="image/*" capture> </br>
+			<div id="aligne">
+			<textarea name="textarea" rows="10" cols="70" placeholder="Message"></textarea></br>
+			<input id="boutonForm" type="button" value="Upload" >
+			</div>
+		</form>
+	</div>
+	
+
+    <div id="footer">
+        <p>nicolas focqueu IPI</p>
+    </div>
+	  <!--<script type="text/javascript" src="js/index.js"></script>-->
+  <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+console.log("gy");
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // device APIs are available
+    //
+    function onDeviceReady() {
+    console.log("ready");
+    function playBeep() {
+		console.log("beep");
+        navigator.notification.beep(3);
+		navigator.vibrate(2000);
+    }
+
+	
+		document.getElementById("vcd").addEventListener("click", playBeep, false);
+		var networkState = navigator.connection.type;
+
+		var states = {};
+		states[Connection.UNKNOWN]  = 'Unknown connection';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI]     = 'WiFi connection';
+		states[Connection.CELL_2G]  = 'Cell 2G connection';
+		states[Connection.CELL_3G]  = 'Cell 3G connection';
+		states[Connection.CELL_4G]  = 'Cell 4G connection';
+		states[Connection.CELL]     = 'Cell generic connection';
+		states[Connection.NONE]     = 'No network connection';
+
+		alert('Connection type: ' + states[networkState]);
+		console.log(states[networkState]);
+		var infomobile = ["Model tel : " + device.model +"\n" +  "Cordova : " + device.cordova +"\n"+ "Langue : " + device.language +"\n"+"Platform : "
+						+ device.platform +"\n"+ "UUID : " + device.uuid +"\n" + "Version : " + device.version +"\n"];
+		
+	alert('Informations sur votre Device' + infomobile);
+	console.log(infomobile);
+	}
+    </script>
+	<script type="text/javascript" src="js/script.js"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCacZjx6BNLTZnAYs2-YhCXI8tgyFXeq8c"
+  type="text/javascript"></script>-->
+	
+</body>
+</html>
