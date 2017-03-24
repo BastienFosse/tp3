@@ -1,54 +1,55 @@
-/**
- * Created by ikki on 04/05/2016.
- */
+
+
 function erreurPosition(error) {
     var info = "Erreur lors de la géolocalisation : ";
-    switch(error.code) {
-    case error.TIMEOUT:
-    	info += "Timeout !";
-    break;
-    case error.PERMISSION_DENIED:
-    info += "Vous n’avez pas donné la permission";
-    break;
-    case error.POSITION_UNAVAILABLE:
-    	info += "La position n’a pu être déterminée";
-    break;
-    case error.UNKNOWN_ERROR:
-    	info += "Erreur inconnue";
-    break;
+
+    switch (error.code) {
+        case error.TIMEOUT:
+            info += "Timeout !";
+            break;
+        case error.PERMISSION_DENIED:
+            info += "Vous n’avez pas donné la permission";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            info += "La position n’a pu être déterminée";
+            break;
+        case error.UNKNOWN_ERROR:
+            info += "Erreur inconnue";
+            break;
     }
-document.getElementById("infoposition").innerHTML = info;
-console.log("info"+info);
+
+    document.getElementById("infoposition").innerHTML = info;
 }
 
 function maPosition(position) {
-  var infopos = "Position déterminée :\n";
-  infopos += "Latitude : "+position.coords.latitude +"\n";
-  var latze = position.coords.latitude;
-  var longze = position.coords.longitude;
-  infopos += "Longitude: "+position.coords.longitude+"\n";
-  document.getElementById("infoposition").innerHTML = infopos;
-  
-  var myLatLng = {lat: latze, lng: longze};
-console.log("pos"+ position);
-  // Create a map object and specify the DOM element for display.
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,
-    scrollwheel: false,
-    zoom: 4
-  });
+    var infopos = "Position déterminée :\n";
+    infopos += "Latitude : " + position.coords.latitude + "\n";
+    var latze = position.coords.latitude;
+    var longze = position.coords.longitude;
+    infopos += "Longitude: " + position.coords.longitude + "\n";
+    document.getElementById("infoposition").innerHTML = infopos;
 
-  // Create a marker and set its position.
-  var marker = new google.maps.Marker({
-    map: map,
-    position: myLatLng,
-    title: 'Hello World!'
-  });
-  console.log("pos"+ position);
-  
+    var myLatLng = { lat: latze, lng: longze };
+
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        scrollwheel: false,
+        zoom: 4
+    });
+
+    // Create a marker and set its position.
+    var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        title: 'Hello World!'
+    });
+	console.log("pos"+ position);
+
+
 }
 
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(maPosition, erreurPosition,{enableHighAccuracy:true});
-  console.log("geo");
- }
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, { enableHighAccuracy: true });
+	console.log("geo");
+}
